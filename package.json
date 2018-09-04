@@ -1,0 +1,31 @@
+{
+  "name": "@nsoft/vue-cli-plugin-chameleon-bundle",
+  "version": "0.0.1",
+  "description": "Plugin for Vue CLI 3",
+  "author": "Chameleon Team <chameleon@nsoft.com>",
+  "contributors": [
+    "Lana Džidić <dzidic.lana@nsoft.com>"
+  ],
+  "private": false,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chmjs/vue-cli-plugin-chameleon-bundle"
+  },
+  "keywords": [
+    "chameleon",
+    "bundle",
+    "plugin",
+    "vue",
+    "cli",
+    "3"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chmjs/vue-cli-plugin-chameleon-bundle/issues"
+  },
+  "homepage": "https://github.com/chmjs/vue-cli-plugin-chameleon-bundle#readme"
+}
