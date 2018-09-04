@@ -7,9 +7,9 @@ This is a project template created from [vue-cli 3.0](https://github.com/vuejs/v
 
 ``` bask
 $ npm install -g @vue/cli                       # Install vue/cli if you haven't already
-$ vue create my-project                         # Create a new project based on this template
+$ vue create my-project                         # Create a new project
 $ cd my-project                                 # Navigate into your new project folder
-$ vue invoke @nsoft/chameleon-bundle            # Invoke plugin
+$ vue invoke @nsoft/chameleon-bundle            # Invoke this plugin to apply bundle template
 $ npm run serve                                 # Run app and open it in your browser
 ```
 
@@ -25,4 +25,4 @@ $ npm run serve                                 # Run app and open it in your br
 
 - `npm run zip-build`: Zip bundle: bundle.js, bundle.meta.js and manifest.json
 
-- `npm run build-bundle "${authToken}"`: Deployment od bundle.zip
+- `npm run build-bundle "${authToken}"`: Deployment of bundle.zip
