@@ -15,6 +15,7 @@ module.exports = (api, opts, rootOpts) => {
     license: opts.license,
     dependencies: {
       '@nsoft/chameleon-sdk': '^1.0.56',
+      vuetify: '^1.2.0',
     },
     devDependencies: {
       '@vue/cli-plugin-unit-jest': '^3.0.0',
