@@ -1,17 +1,17 @@
 {
-  "name": "{{ bundleName }}",
-  "namespace": "{{ bundleNamespace }}-",
+  "name": "<%= bundleName %>",
+  "namespace": "<%= bundleNamespace %>-",
   "version": 1,
   "scripts": [
     {
       "script": "bundle.js",
       "type": "components",
-      "global": "__CHAMELEON_{{ bundleUpperName }}__"
+      "global": "__CHAMELEON_<%= bundleName.toUpperCase() %>__"
     },
     {
       "script": "bundle.meta.js",
       "type": "meta",
-      "global": "__CHAMELEON_{{ bundleUpperName }}_META__"
+      "global": "__CHAMELEON_<%= bundleName.toUpperCase() %>_META__"
     }
   ]
 }
