@@ -1,0 +1,17 @@
+{
+  "name": "{{ bundleName }}",
+  "namespace": "{{ bundleNamespace }}-",
+  "version": 1,
+  "scripts": [
+    {
+      "script": "bundle.js",
+      "type": "components",
+      "global": "__CHAMELEON_{{ bundleUpperName }}__"
+    },
+    {
+      "script": "bundle.meta.js",
+      "type": "meta",
+      "global": "__CHAMELEON_{{ bundleUpperName }}_META__"
+    }
+  ]
+}
