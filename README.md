@@ -21,6 +21,11 @@ $ npm run serve                                 # Run app and open it in your br
 `Bundle Name` - name of your bundle, it's used for library global name as `__CHAMELEON_${bundleName}__` and in bundle manifest, defaults to *sample*
 `Bundle Namepace` - namespace for your bundle, it's written in bundle `manifest.json`, defaults to *z*
 
+**Bundle Manifest**
+Each bundle must have its own `manifest.json` file which describes it. This file gets bundled together with other bundle files in `bundle.zip` which is used for new bundle registration and existing bundle update.
+Bundling process adds each script defined inside manifest `scripts`, as well as css files defined in manifest `styles`. Both of these props are optional, but bundle must have at least one of them.
+If a bundle has some md files, they should be grouped in one directory inside `src` and that directory will get bundled to `bundle.zip`. `helpPath` can also point to some remote URL.
+
 ### What's Included
 
 - `npm run serve`: Serve with hot reload at localhost on available port

@@ -2,6 +2,9 @@
   "name": "<%= bundleName %>",
   "namespace": "<%= bundleNamespace %>-",
   "version": 1,
+  "styles": [
+    "index.css"
+  ],
   "scripts": [
     {
       "script": "bundle.js",
@@ -13,5 +16,6 @@
       "type": "meta",
       "global": "__CHAMELEON_<%= bundleName.toUpperCase() %>_META__"
     }
-  ]
+  ],
+  "helpPath": "help"
 }
