@@ -49,4 +49,10 @@ module.exports = (api, opts, rootOpts) => {
   });
 
   api.render('./templates/default', { ...opts });
+
+  api.onCreateComplete(() => {
+    const fs = require('fs');
+
+    fs.unlinkSync(api.resolve('./components/HelloWorld.vue'));
+  });
 }
