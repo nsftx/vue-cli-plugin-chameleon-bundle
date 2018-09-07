@@ -20,13 +20,13 @@ module.exports = [
     name: 'name',
     type: 'string',
     required: true,
-    message: 'Project name',
+    message: 'Project Name',
     default: 'chameleon-bundle',
   },
   {
     name: 'description',
     type: 'string',
-    message: 'Project description',
+    message: 'Project Description',
     default: 'Chameleon Bundle Project',
   },
   {
