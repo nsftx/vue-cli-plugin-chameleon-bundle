@@ -1,14 +1,18 @@
+const packageConfig = require('./package.json');
+
+const bundleName = packageConfig.chameleon.bundle.toUpperCase();
+const nameIndex = process.argv.indexOf('--name');
+const libName = process.argv[nameIndex + 1];
+const isMeta = libName.indexOf('meta') >= 0;
+
+const globalSuffix = isMeta ? '_META' : '';
+
 module.exports = {
   lintOnSave: true,
-  chainWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
-      config
-        .plugin('extract-css')
-        .tap((args) => {
-          args[0].filename = 'css/index.css';
+  chainWebpack: (config) => {
+    config.output.library(`__CHAMELEON_${bundleName}${globalSuffix}__`);
+    config.output.libraryExport('default');
 
-          return args;
-        });
-    }
+    config.externals({ vuetify: 'Vuetify', vue: 'Vue' });
   },
 };

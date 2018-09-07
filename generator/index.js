@@ -4,9 +4,10 @@ module.exports = (api, opts, rootOpts) => {
     description: opts.description,
     author: opts.author,
     scripts: {
-      start: 'npm run serve',
       serve: 'vue-cli-service serve --open',
-      'build-bundle': 'NODE_ENV=production VUE_CLI_TARGET=lib webpack-cli --config build/index.js --progress --hide-modules',
+      'build': 'vue-cli-service build --target lib --name bundle --entry src/index.js',
+      'build-meta': 'vue-cli-service build --no-clean --target lib --name bundle.meta --entry src/index.meta.js',
+      'build-bundle': 'npm run build && npm run build-meta && node build/cleanup.js',
       'zip-bundle': 'node ./build/bundle.js',
       'deploy-bundle': 'node ./build/deploy.js',
       bundle: 'npm run build-bundle && npm run zip-bundle',
@@ -32,6 +33,7 @@ module.exports = (api, opts, rootOpts) => {
       'node-zip': '^1.1.1',
       'stylus': '^0.54.5',
       'stylus-loader': '^3.0.2',
+      'webpack-cli': '^3.1.0',
     },
     chameleon: {
       bundle: opts.bundleName,
