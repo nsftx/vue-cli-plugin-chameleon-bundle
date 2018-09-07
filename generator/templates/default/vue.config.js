@@ -9,10 +9,13 @@ const globalSuffix = isMeta ? '_META' : '';
 
 module.exports = {
   lintOnSave: true,
-  chainWebpack: (config) => {
-    config.output.library(`__CHAMELEON_${bundleName}${globalSuffix}__`);
-    config.output.libraryExport('default');
+  chainWebpack: (wConfig) => {
+    wConfig
+      .when(process.env.NODE_ENV === 'production', (config) => {
+        config.output.library(`__CHAMELEON_${bundleName}${globalSuffix}__`);
+        config.output.libraryExport('default');
 
-    config.externals({ vuetify: 'Vuetify', vue: 'Vue' });
+        config.externals({ vuetify: 'Vuetify', vue: 'Vue' });
+      });
   },
 };

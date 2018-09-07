@@ -15,7 +15,7 @@ $ npm run serve                                 # Run app and open it in your br
 
 ### What's Included
 
-- `npm run start/serve`: Serve with hot reload at localhost:8080
+- `npm run serve`: Serve with hot reload at localhost:8080
 
 - `npm test`: Unit tests run in [JSDOM](https://github.com/tmpvar/jsdom) with [Jest](https://facebook.github.io/jest/), with support for mocking and ES2015+.
 
