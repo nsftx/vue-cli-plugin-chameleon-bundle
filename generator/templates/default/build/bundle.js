@@ -11,13 +11,13 @@ zip.file('manifest.json', fs.readFileSync('./build/manifest.json'));
 
 if (manifest.styles) {
   each(manifest.styles, (style) => {
-    zip.file(style, fs.readFileSync(resolveDist(`css/${style}`)));
+    zip.file(style, fs.readFileSync(resolveDist(style)));
   });
 }
 
 if (manifest.scripts) {
   each(manifest.scripts, (scriptConfig) => {
-    zip.file(scriptConfig.script, fs.readFileSync(resolveDist(`js/${scriptConfig.script}`)));
+    zip.file(scriptConfig.script, fs.readFileSync(resolveDist(scriptConfig.script)));
   });
 }
 
