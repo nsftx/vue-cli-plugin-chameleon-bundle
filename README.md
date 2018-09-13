@@ -26,7 +26,7 @@ $ npm run serve                          # Run app and open it in your browser
 
 Each bundle must have its own `manifest.json` file which describes it. This file gets bundled together with other bundle files in `bundle.zip` which is used for new bundle registration and existing bundle update.
 Bundling process adds each script defined inside manifest `scripts`, as well as css files defined in manifest `styles`. Both of these props are optional, but bundle must have at least one of them.
-If a bundle has some md files, they should be grouped in one directory inside `src` and that directory will get bundled to `bundle.zip`. `helpPath` can also point to some remote URL.
+If a bundle has some help files, they should be grouped in one directory inside `src` and that directory will get bundled to `bundle.zip`. `helpPath` can also point to some remote URL.
 
 ### What's Included
 
@@ -36,4 +36,4 @@ If a bundle has some md files, they should be grouped in one directory inside `s
 - `npm run build-meta`: Production UMD meta library build with minification.
 - `npm run build-bundle`: Production bundle build with minification.
 - `npm run zip-build`: Zip bundle files defined in manifest.json, ready for deployment
-- `npm run build-bundle "${authToken}"`: Deployment of bundle.zip
+- `npm run deploy-bundle "${authToken}"`: Deployment of bundle.zip
