@@ -53,6 +53,6 @@ module.exports = (api, opts, rootOpts) => {
   api.onCreateComplete(() => {
     const fs = require('fs');
 
-    fs.unlinkSync(api.resolve('./components/HelloWorld.vue'));
+    fs.unlinkSync(api.resolve('.src/components/HelloWorld.vue'));
   });
 }
