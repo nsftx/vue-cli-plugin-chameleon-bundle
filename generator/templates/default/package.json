@@ -44,14 +44,6 @@
   "chameleon": {
     "bundle": "{{ bundleName }}"
   },
-  "babel": {
-    "plugins": [
-      "lodash"
-    ],
-    "presets": [
-      "@vue/app"
-    ]
-  },
   "jest": {
     "moduleNameMapper": {
       "@/(.*)$": "<rootDir>/src/$1"
