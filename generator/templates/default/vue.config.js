@@ -9,6 +9,9 @@ const globalSuffix = isMeta ? '_META' : '';
 
 module.exports = {
   lintOnSave: true,
+  transpileDependencies: [
+    '@nsoft/chameleon-sdk',
+  ],
   chainWebpack: (wConfig) => {
     wConfig
       .when(process.env.NODE_ENV === 'production', (config) => {
