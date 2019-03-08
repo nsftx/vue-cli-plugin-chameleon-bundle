@@ -3,6 +3,18 @@ export default {
   type: 'z-sample',
   name: 'Sample',
   icon: 'card_giftcard',
+  actions: [
+    {
+      name: 'loadData',
+      help: 'Load element data',
+    },
+  ],
+  events: [
+    {
+      name: 'Loaded',
+      help: 'Element data was loaded',
+    },
+  ],
   options: {
     message: {
       type: 'input',
@@ -10,5 +22,7 @@ export default {
       value: 'Hello Chameleon',
       priority: 1,
     },
+    theme,
+    color,
   },
 };
