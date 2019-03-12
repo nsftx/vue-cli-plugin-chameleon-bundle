@@ -16,5 +16,9 @@ export default {
       key: 'general',
       name: 'General',
     },
+    style: {
+      key: 'style',
+      name: 'Style',
+    },
   },
 };

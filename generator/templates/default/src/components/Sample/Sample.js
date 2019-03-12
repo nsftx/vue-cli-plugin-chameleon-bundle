@@ -12,18 +12,27 @@ export default {
     themable,
   ],
   render(createElement) {
+    /*
+      this.config - Local copy of definition object (elementable mixin)
+      <z-sample :definition="config" />
+      config: {
+        message: 'Hello Chameleon',
+        theme: 'dark',
+        color: 'green accent-4',
+      },
+    */
     return createElement(
       'v-card',
       {
         props: {
-          // <z-sample :definition="config" />
-          // Local copy of definition object (elementable mixin)
+          // Color - Definition object color
           color: this.config.color,
-          // Element theme (themable mixin)
+          // Theme - Definition object theme (themable mixin)
           dark: this.isThemeDark,
           light: this.isThemeLight,
         },
       },
+      // Message - Definition object message
       this.config.message,
     );
   },
@@ -33,10 +42,10 @@ export default {
     }, 2000);
   },
   methods: {
-    // Method (action) used for EAR system
+    // Actions - Method that can be used for EAR system (reactionable mixin)
     loadData() {
       this.config.message = 'Hello again, Chameleon';
-      // Send event using eventBus (reactionable mixin)
+      // Events - Send event using eventBus (reactionable mixin)
       this.sendToEventBus('Loaded', this.config.message);
     },
   },
