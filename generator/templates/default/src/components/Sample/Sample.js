@@ -36,11 +36,6 @@ export default {
       this.config.message,
     );
   },
-  created() {
-    setTimeout(() => {
-      this.loadData();
-    }, 2000);
-  },
   methods: {
     // Actions - Method that can be used for EAR system (reactionable mixin)
     loadData() {
