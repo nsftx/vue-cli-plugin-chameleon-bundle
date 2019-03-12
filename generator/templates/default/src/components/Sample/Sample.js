@@ -1,38 +1,43 @@
 import {
+  elementable,
   reactionable,
-  themeable,
-} from '@mixins';
+  themable,
+} from '../../mixins';
 
 export default {
   name: 'z-sample',
   mixins: [
+    elementable,
     reactionable,
-    themeable,
+    themable,
   ],
-  props: {
-    message: {
-      type: String,
-      default: 'Hello Chameleon',
-    },
-  },
   render(createElement) {
     return createElement(
-      'div',
+      'v-card',
       {
         props: {
+          // <z-sample :definition="config" />
+          // Local copy of definition object (elementable mixin)
           color: this.config.color,
+          // Element theme (themable mixin)
           dark: this.isThemeDark,
           light: this.isThemeLight,
         },
       },
-      this.message,
+      this.config.message,
     );
   },
+  created() {
+    setTimeout(() => {
+      this.loadData();
+    }, 2000);
+  },
   methods: {
+    // Method (action) used for EAR system
     loadData() {
-      const message = 'Hello again, Chameleon';
-      this.sendToEventBus('Loaded', message);
-      return message;
+      this.config.message = 'Hello again, Chameleon';
+      // Send event using eventBus (reactionable mixin)
+      this.sendToEventBus('Loaded', this.config.message);
     },
   },
 };

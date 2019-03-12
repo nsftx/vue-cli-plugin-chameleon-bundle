@@ -22,7 +22,7 @@ export default {
       value: 'Hello Chameleon',
       priority: 1,
     },
-    theme,
-    color,
+    theme: true,
+    color: true,
   },
 };
