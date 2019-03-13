@@ -3,7 +3,7 @@
   "namespace": "<%= bundleNamespace %>-",
   "version": 1,
   "styles": [
-    "index.css"
+    "bundle.css"
   ],
   "scripts": [
     {
