@@ -31,6 +31,12 @@ export default {
           dark: this.isThemeDark,
           light: this.isThemeLight,
         },
+        // Generates data attributes needed for chameleon builder (elementable mixin)
+        attrs: this.getSchemaAttributes(),
+
+        // Static classes needed for chameleon builder.
+        // This is required for all elements used in builder (elementable mixin).
+        staticClass: `${this.baseClass} ${this.$options.name}`,
       },
       // Message - Definition object message
       this.config.message,
