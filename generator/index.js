@@ -23,6 +23,7 @@ module.exports = (api, opts, rootOpts) => {
       '@vue/test-utils': '^1.0.0-beta.24',
       axios: '^0.18.0',
       'babel-core': '^7.0.0-bridge.0',
+      'babel-plugin-lodash': "^3.3.2",
       eslint: '^5.5.0',
       'eslint-config-airbnb-base': '^13.1.0',
       'eslint-import-resolver-webpack': '^0.10.1',
