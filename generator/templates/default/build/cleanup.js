@@ -18,7 +18,7 @@ each(files, (file) => {
   const minIndex = nameParts.indexOf('min');
   const isCss = nameParts.indexOf('css') >= 0;
   if (minIndex < 0 && !isCss) {
-    fs.unlink(path.join(__dirname, '../dist', file), () => {  });
+    fs.unlink(path.join(__dirname, '../dist', file), () => { });
     return;
   }
 
