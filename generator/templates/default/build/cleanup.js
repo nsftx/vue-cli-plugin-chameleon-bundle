@@ -5,7 +5,7 @@ const { each } = require('lodash');
 const files = fs.readdirSync(path.join(__dirname, '../dist'));
 each(files, (file) => {
   if (file.indexOf('common') >= 0) {
-    fs.unlink(path.join(__dirname, '../dist', file), () => {});
+    fs.unlink(path.join(__dirname, '../dist', file), () => { });
     return;
   }
 
@@ -18,13 +18,11 @@ each(files, (file) => {
   const minIndex = nameParts.indexOf('min');
   const isCss = nameParts.indexOf('css') >= 0;
   if (minIndex < 0 && !isCss) {
-    fs.unlink(path.join(__dirname, '../dist', file), () => {});
+    fs.unlink(path.join(__dirname, '../dist', file), () => { });
     return;
   }
 
-  if (isCss) {
-    nameParts.splice(0, 1, 'index');
-  } else {
+  if (!isCss) {
     nameParts.splice(minIndex, 1);
   }
 
