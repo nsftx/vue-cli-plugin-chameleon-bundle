@@ -1,7 +1,7 @@
 import * as elements from './components/index.meta';
 
 export default {
-  namespace: 'z-',
+  namespace: '<%= bundleNamespace %>-',
   name: 'sample',
   title: 'Sample Bundle',
   elements,

@@ -1,0 +1,11 @@
+{
+  "name": "samplePage",
+  "type": "page",
+  "theme": "light",
+  "elements": [
+    {
+      "type": "<%= bundleNamespace %>-sample",
+      "message": "Hello from the other side"
+    }
+  ]
+}
