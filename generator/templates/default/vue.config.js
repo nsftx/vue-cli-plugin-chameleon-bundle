@@ -20,5 +20,8 @@ module.exports = {
 
         config.externals({ vuetify: 'Vuetify', vue: 'Vue' });
       });
+
+    wConfig.module.rule('eslint').use('eslint-loader')
+      .tap(opts => ({ ...opts, emitWarning: false }));
   },
 };
