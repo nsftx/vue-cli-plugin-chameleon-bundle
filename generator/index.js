@@ -54,6 +54,10 @@ module.exports = (api, opts, rootOpts) => {
   api.onCreateComplete(() => {
     const fs = require('fs');
 
-    fs.unlinkSync(api.resolve('src/components/HelloWorld.vue'));
+    try {
+      fs.unlinkSync(api.resolve('src/components/HelloWorld.vue'));
+    } catch(e) {
+      // Nothing to do here, there was no component to be deleted
+    }
   });
 }

@@ -1,4 +1,5 @@
 import * as components from './components';
+
 require('./style/main.styl');
 
 export default {

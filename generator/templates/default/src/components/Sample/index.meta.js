@@ -1,6 +1,6 @@
 export default {
   group: 'widgets',
-  type: 'z-sample',
+  type: '<%= bundleNamespace %>-sample',
   name: 'Sample',
   icon: 'card_giftcard',
   actions: [
@@ -19,7 +19,7 @@ export default {
     message: {
       type: 'input',
       name: 'Message Text',
-      value: 'Hello Chameleon',
+      value: 'Hello <%= bundleName %>',
       priority: 1,
     },
     theme: {

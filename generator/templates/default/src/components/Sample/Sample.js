@@ -5,7 +5,7 @@ import {
 } from '../../mixins';
 
 export default {
-  name: 'z-sample',
+  name: '<%= bundleNamespace %>-sample',
   mixins: [
     elementable,
     reactionable,
@@ -14,7 +14,7 @@ export default {
   render(createElement) {
     /*
       this.config - Local copy of definition object (elementable mixin)
-      <z-sample :definition="config" />
+      < <%= bundleNamespace %>-sample :definition="config" />
       config: {
         message: 'Hello Chameleon',
         theme: 'dark',
@@ -22,7 +22,7 @@ export default {
       },
     */
     return createElement(
-      'v-card',
+      'div',
       {
         props: {
           // Color - Definition object color
@@ -37,6 +37,12 @@ export default {
         // Static classes needed for chameleon builder.
         // This is required for all elements used in builder (elementable mixin).
         staticClass: `${this.baseClass} ${this.$options.name}`,
+        // Make it prettier
+        staticStyle: {
+          textAlign: 'center',
+          padding: '20px',
+
+        },
       },
       // Message - Definition object message
       this.config.message,
