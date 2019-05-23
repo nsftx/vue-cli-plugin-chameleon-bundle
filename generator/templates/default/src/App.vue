@@ -19,7 +19,8 @@
         <v-list>
           <v-list-tile v-for="item in components"
                       :key="item.name"
-                      @click="onComponentChanged(item.name)">
+                      :class="{ 'active': activeComponent && activeComponent.name === item.name }"
+                      @click="onComponentChanged(item)">
             <v-list-tile-action>
               <v-icon>{{ item.icon }}</v-icon>
             </v-list-tile-action>
@@ -42,8 +43,15 @@
           <v-flex xs12
                   class="content">
             <v-card>
-              <v-toolbar dense color="blue darken-1"></v-toolbar>
+              <v-toolbar dense
+                        dark
+                        color="blue darken-1">
+                <v-toolbar-title v-if="activeComponent">
+                  {{ activeComponent.name }} Component
+                </v-toolbar-title>
+              </v-toolbar>
               <v-card-text :class="{ 'pa-0': !!source }">
+                <!-- CPage is always the root component inside Chameleon Builder and generated app -->
                 <c-page v-if="source"
                         :definition="definition">
                 </c-page>
@@ -62,7 +70,7 @@ import axios from 'axios';
 import Vue from 'vue';
 import Vuetify from 'vuetify';
 import VJsoneditor from 'vue-jsoneditor';
-import { toLower } from 'lodash';
+import { toLower, values } from 'lodash';
 import 'vuetify/src/stylus/main.styl';
 import * as components from './components/index.meta';
 
@@ -79,6 +87,7 @@ export default {
   },
   data() {
     return {
+      activeComponent: null,
       components: null,
       definition: null,
       source: null,
@@ -86,8 +95,9 @@ export default {
     };
   },
   methods: {
-    onComponentChanged(name) {
-      http.get(`/mocks/${toLower(name)}.json`).then((response) => {
+    onComponentChanged(component) {
+      http.get(`/mocks/${toLower(component.name)}.json`).then((response) => {
+        this.activeComponent = component;
         this.definition = response.data;
         this.source = this.definition;
       });
@@ -97,7 +107,8 @@ export default {
     },
   },
   mounted() {
-    this.components = components;
+    this.components = values(components);
+    if (this.components.length) this.onComponentChanged(this.components[0]);
   },
 };
 </script>
@@ -105,5 +116,11 @@ export default {
 <style lang="stylus">
 .content {
   border: 1px solid #1e88e5;
+}
+
+.v-list {
+  .active {
+    background-color: #388e3c;
+  }
 }
 </style>
