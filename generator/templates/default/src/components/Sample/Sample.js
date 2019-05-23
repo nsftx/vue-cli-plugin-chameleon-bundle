@@ -1,6 +1,7 @@
 import {
   elementable,
   reactionable,
+  sourceable,
   themable,
 } from '../../mixins';
 
@@ -9,8 +10,14 @@ export default {
   mixins: [
     elementable,
     reactionable,
+    sourceable,
     themable,
   ],
+  data() {
+    return {
+      items: null,
+    };
+  },
   render(createElement) {
     /*
       this.config - Local copy of definition object (elementable mixin)
@@ -45,15 +52,34 @@ export default {
         },
       },
       // Message - Definition object message
-      this.config.message,
+      [this.config.message, this.renderChildrenElements(createElement)],
     );
   },
   methods: {
     // Actions - Method that can be used for EAR system (reactionable mixin)
     loadData() {
-      this.config.message = 'Hello again, Chameleon';
+      this.loadConnectorData().then((result) => {
+        this.items = result.items;
+      });
       // Events - Send event using eventBus (reactionable mixin)
       this.sendToEventBus('Loaded', this.config.message);
     },
+    renderChildrenElements(createElement) {
+      if (!this.items) return null;
+
+      // Render element for each item in loaded data
+      return this.items.map(item => createElement(
+        'div',
+        {
+          staticStyle: {
+            marginTop: '10px',
+          },
+        },
+        `${item.author}, ${item.title}`,
+      ));
+    },
+  },
+  mounted() {
+    this.loadData();
   },
 };
