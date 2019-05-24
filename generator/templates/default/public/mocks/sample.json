@@ -4,7 +4,7 @@
   "theme": "light",
   "elements": [
     {
-      "type": "ss-sample",
+      "type": "<%= bundleNamespace %>-sample",
       "message": "Hello from the other side",
       "dataSource": {
         "name": "articles",

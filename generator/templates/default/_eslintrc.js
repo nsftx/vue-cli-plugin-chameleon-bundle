@@ -4,15 +4,17 @@ const webpackConfigPath = './node_modules/@vue/cli-service/webpack.config.js';
 module.exports = {
   env: {
     browser: true,
+    'jest/globals': true,
   },
   extends: 'airbnb-base',
   parser: 'babel-eslint',
   parserOptions: {
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: [
     'vue',
     'html',
+    'jest',
   ],
   root: true,
   rules: {
