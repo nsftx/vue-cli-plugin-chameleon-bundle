@@ -1,5 +1,5 @@
-// eslint-disable-next-line
 // Import necessary utility methods from Chameleon SDK
+// eslint-disable-next-line
 export {
   binding,
   logger,
