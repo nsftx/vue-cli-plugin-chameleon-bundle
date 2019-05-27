@@ -17,6 +17,7 @@ module.exports = (api, opts, rootOpts) => {
     license: opts.license,
     dependencies: {
       '@nsoft/chameleon-sdk': '^1.0.97',
+      lodash: '^4.17.10',
       vuetify: '^1.2.0',
     },
     devDependencies: {
@@ -34,7 +35,6 @@ module.exports = (api, opts, rootOpts) => {
       "eslint-plugin-jest": "^22.6.4",
       "eslint-plugin-vue": "^5.0.0",
       'form-data': '^2.3.2',
-      lodash: '^4.17.10',
       'node-zip': '^1.1.1',
       'stylus': '^0.54.5',
       'stylus-loader': '^3.0.2',
