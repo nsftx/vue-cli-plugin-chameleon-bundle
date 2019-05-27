@@ -31,6 +31,7 @@ module.exports = (api, opts, rootOpts) => {
       'eslint-import-resolver-webpack': '^0.10.1',
       'eslint-plugin-html': '^4.0.5',
       'eslint-plugin-import': '^2.14.0',
+      "eslint-plugin-jest": "^22.6.4",
       "eslint-plugin-vue": "^5.0.0",
       'form-data': '^2.3.2',
       lodash: '^4.17.10',
