@@ -5,7 +5,7 @@ module.exports = (api, opts, rootOpts) => {
     author: opts.author,
     scripts: {
       serve: 'vue-cli-service serve --open',
-      test: 'vue-cli-service test',
+      test: 'vue-cli-service test:unit',
       lint: 'vue-cli-service lint',
       'build': 'vue-cli-service build --target lib --name bundle --entry src/index.js',
       'build-meta': 'vue-cli-service build --no-clean --target lib --name bundle.meta --entry src/index.meta.js',
