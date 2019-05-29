@@ -2,8 +2,8 @@ import * as elements from './components/index.meta';
 
 export default {
   namespace: '<%= bundleNamespace %>-',
-  name: 'sample',
-  title: 'Sample Bundle',
+  name: '<%= bundleName %>',
+  title: '<%= friendlyName %> Bundle',
   elements,
   elementGroups: {
     widgets: {

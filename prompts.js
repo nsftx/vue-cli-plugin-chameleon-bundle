@@ -5,13 +5,15 @@ const validateBundleName = (name) => {
   return true;
 };
 
-const validateBundleNamespace = (name) => {
-  if (name.length === 0) {
-    return 'Bundle namespace must contain at least one character';
+const validateBundleNamespace = (namespace) => {
+  const pattern = /^[a-z]{1,2}$/;
+  const isValid = pattern.test(namespace);
+
+  if (!isValid) {
+    return `Bundle namespace must contain at least one and maximum of 2 characters.
+    Special characters are not allowed.`;
   }
-  if (name.length > 2) {
-    return 'Bundle namespace must be shorter than three characters';
-  }
+
   return true;
 };
 
@@ -41,6 +43,14 @@ module.exports = [
     default: 'MIT',
   },
   {
+    name: 'bundleNamespace',
+    type: 'string',
+    required: true,
+    message: 'Bundle Namespace',
+    default: 'z',
+    validate: validateBundleNamespace,
+  },
+  {
     name: 'bundleName',
     type: 'string',
     required: true,
@@ -49,11 +59,10 @@ module.exports = [
     validate: validateBundleName,
   },
   {
-    name: 'bundleNamespace',
+    name: 'friendlyName',
     type: 'string',
     required: true,
-    message: 'Bundle Namespace',
-    default: 'z',
-    validate: validateBundleNamespace,
-  }
+    message: 'Friendly Bundle Name (for display purposes)',
+    default: 'Sample',
+  },
 ];
