@@ -6,11 +6,11 @@ Vue CLI plugin for Chameleon bundles
 This is a project template created from [vue-cli 3.0](https://github.com/vuejs/vue-cli). We strongly recommend to use it with Vue CLI stable version, i.e. 3.0.0 and above, due to build inconsistencies in lower versions.
 
 ``` bask
-$ npm install -g @vue/cli                # Install vue/cli if you haven't already
-$ vue create my-project                  # Create a new project
-$ cd my-project                          # Navigate into your new project folder
-$ vue add @nsoft/chameleon-bundle        # Add & invoke this plugin to apply bundle template
-$ npm run serve                          # Run app and open it in your browser
+$ npm install -g @vue/cli                           # Install vue/cli if you haven't already
+$ vue create my-project                             # Create a new project
+$ cd my-project                                     # Navigate into your new project folder
+$ vue add @nsoft/chameleon-bundle ${authToken}      # Add & invoke this plugin to apply bundle template
+$ npm run serve                                     # Run app and open it in your browser
 ```
 
 **Options**

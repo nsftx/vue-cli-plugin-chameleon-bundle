@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/nsftx/vue-cli-plugin-chameleon-bundle/issues"
   },
-  "homepage": "https://github.com/nsftx/vue-cli-plugin-chameleon-bundle#readme"
+  "homepage": "https://github.com/nsftx/vue-cli-plugin-chameleon-bundle#readme",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
 }
